@@ -1,6 +1,7 @@
 import math
 import stepper
 import threading
+import time
 DIR_M1 = 5       # Direction GPIO Pin
 STEP_M1 = 6      # Step GPIO Pin
 DIR_M2 = 13       # Direction GPIO Pin
@@ -21,8 +22,8 @@ while True:
     l2 = math.sqrt(square(5-x) + square(y-5))
     n1 = ((6 - l1) * d)/(2 * math.pi * r)
     n2 = ((6 - l2) * d)/(2 * math.pi * r)
-    n1_diff = N1-n1
-    n2_diff = N2-n2
+    n1_diff = int(N1-n1)
+    n2_diff = int(N2-n2)
     m1_dir = True
     m2_dir = True
     if N1-n1>0 :
